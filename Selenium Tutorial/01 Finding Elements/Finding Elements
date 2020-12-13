@@ -1,0 +1,5 @@
+In terms to automate testing of elements we need first to access them.
+
+First way to find element is by id.The id's are used from the developers
+to give unique identifier for an element which helps us to use id for get the
+particular element.
