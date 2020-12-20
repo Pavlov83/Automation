@@ -4,18 +4,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FindElementById {
+public class FindElementByName {
 
     public static void main(String[] args){
-
         System.setProperty("webdriver.chrome.driver",
                 "/Users/pav/Documents/SeleniumDrivers/chromedriver");
-        WebDriver driver = new ChromeDriver();
         String baseUrl = "https://amazon.com";
+        WebDriver driver = new ChromeDriver();
         driver.get(baseUrl);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        driver.findElement(By.id("glow-ingress-line2")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.name("url")).click();
     }
 }
