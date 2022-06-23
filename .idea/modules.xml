@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Automation.iml" filepath="$PROJECT_DIR$/.idea/Automation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excercises/Excercises.iml" filepath="$PROJECT_DIR$/Excercises/Excercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Selenium Tutorial/Selenium Tutorial.iml" filepath="$PROJECT_DIR$/Selenium Tutorial/Selenium Tutorial.iml" />
+    </modules>
+  </component>
+</project>
