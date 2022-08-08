@@ -2,6 +2,7 @@ import files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
+import static io.restassured.RestAssured.get;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.given;
 
@@ -25,6 +26,32 @@ public class ValidateAddPlaceApi {
         String placeId = js.getString("place_id");
 
         //Add place -> Update place with new address ->get Place to validate if New address is present in the response
+            System.out.println(placeId);
+        given().log().all().queryParam("key","qaclick123")
+                .header("Content-Type","application/json")
+                .body("{\n" +
+                        "    \"place_id\":\""+ placeId +"\",\n" +
+                        "    \"address\":\"Third avenue\",\n" +
+                        "    \"key\":\"qaclick123\"\n" +
+                        "}")
+                .when()
+                .put("maps/api/place/update/json")
+                .then()
+                .assertThat()
+                .log().all()
+                .statusCode(200)
+                .body("msg",equalTo("Address successfully updated"));
+
+        String getPlaceResponse= given().log().all().queryParam("key","qaclick123")
+
+                .queryParam("place_id", placeId)
+                .when()
+                .get("maps/api/place/get/json")
+                .then().assertThat().log().all().statusCode(200).extract().response().asString();
+        JsonPath getUpdatedValue = new JsonPath(getPlaceResponse);
+        String actualAddress = getUpdatedValue.getString("address");
+        System.out.println(actualAddress);
+
 
     }
 }
