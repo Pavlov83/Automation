@@ -3,7 +3,7 @@ GET http://localhost:3000/subscribers
 ###
 
 
-GET http://localhost:3000/subscribers/15
+GET http://localhost:3000/subscribers/6329950c6dc51df9296b38b8
 
 ###
 
@@ -11,6 +11,10 @@ POST http://localhost:3000/subscribers
 Content-Type: application/json
 
 {
-    "name": "Amazing Person",
-    "subscribedToChannel": "Resolversoft"
+    "name": "Amazing Person 3",
+    "subscribedToChannel": "Subscriber one"
 }
+
+###
+
+DELETE http://localhost:3000/subscribers/6329950c6dc51df9296b38b8
