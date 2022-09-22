@@ -1,20 +1,36 @@
+//Get All subscribers
 GET http://localhost:3000/subscribers
-
 ###
 
+//Get All invoices
+GET http://localhost:3000/invoices
+###
 
+//Get particular subscriber
 GET http://localhost:3000/subscribers/6329950c6dc51df9296b38b8
-
 ###
 
+//Add new subscriber
 POST http://localhost:3000/subscribers
 Content-Type: application/json
 
 {
-    "name": "Amazing Person 3",
-    "subscribedToChannel": "Subscriber one"
+    "name": "Amazing Person 10",
+    "subscriberDetails": "Subscribed since two years"
 }
-
 ###
 
-DELETE http://localhost:3000/subscribers/6329950c6dc51df9296b38b8
+//Add new invoice
+POST http://localhost:3000/invoices
+Content-Type: application/json
+
+{
+    "invoiceId":234,
+    "info":[{"name":"info three","surname":"surname three"},
+    {"name":"additional info 3","surname":"surname info three"}]
+}
+###
+
+//Delete subscriber
+DELETE http://localhost:3000/subscribers/632c387683d05631ad254672
+

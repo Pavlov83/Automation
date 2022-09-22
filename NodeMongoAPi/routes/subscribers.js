@@ -17,11 +17,11 @@ router.get('/:id', getSubscriber, (req, res) => {
   res.json(res.subscriber)
 })
 
-// Creating one
+// Creating one subscriber
 router.post('/', async (req, res) => {
   const subscriber = new Subscriber({
     name: req.body.name,
-    subscribedToChannel: req.body.subscribedToChannel
+    subscriberDetails: req.body.subscriberDetails
   })
   try {
     const newSubscriber = await subscriber.save()
