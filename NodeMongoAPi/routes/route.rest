@@ -15,8 +15,14 @@ POST http://localhost:3000/subscribers
 Content-Type: application/json
 
 {
-    "name": "Amazing Person 10",
-    "subscriberDetails": "Subscribed since two years"
+    "name": "Amazing Person 12",
+    "subscriberDetails": "Subscribed since five years",
+    "invoices":[{
+        "invoiceId":324,
+        "companyName":"Resolver software technologies",
+        "products":"Software package",
+        "totalPrice":10000
+    }]
 }
 ###
 

@@ -21,7 +21,8 @@ router.get('/:id', getSubscriber, (req, res) => {
 router.post('/', async (req, res) => {
   const subscriber = new Subscriber({
     name: req.body.name,
-    subscriberDetails: req.body.subscriberDetails
+    subscriberDetails: req.body.subscriberDetails,
+    invoices:req.body.invoices
   })
   try {
     const newSubscriber = await subscriber.save()

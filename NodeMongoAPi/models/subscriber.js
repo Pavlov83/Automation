@@ -1,5 +1,16 @@
 const mongoose = require('mongoose')
-const subscriberSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const InvoiceSchema = new Schema({
+
+  invoiceId:Number,
+  companyName:String,
+  products:String,
+  totalPrice:Number
+
+})
+
+const SubscriberSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -12,7 +23,11 @@ const subscriberSchema = new mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now
-  } 
-})
+  },
+    
+      invoices:[InvoiceSchema]
+    
+  })
 
-module.exports = mongoose.model('Subscriber', subscriberSchema)
+const subscriberModel = mongoose.model('Subscriber',SubscriberSchema)
+module.exports = subscriberModel;
