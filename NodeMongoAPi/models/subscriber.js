@@ -24,8 +24,7 @@ const SubscriberSchema = new Schema({
     required: true,
     default: Date.now
   },
-    
-      invoices:[InvoiceSchema]
+   invoices:[InvoiceSchema]
     
   })
 

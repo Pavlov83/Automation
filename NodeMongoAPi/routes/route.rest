@@ -1,33 +1,48 @@
 //Get All subscribers
-GET http://localhost:3000/subscribers
+GET http://localhost:5000/companies
 ###
 
 //Get All invoices
-GET http://localhost:3000/invoices
+GET http://localhost:5000/invoices
 ###
 
 //Get particular subscriber
-GET http://localhost:3000/subscribers/6329950c6dc51df9296b38b8
+GET http://localhost:5000/subscribers/6329950c6dc51df9296b38b8
 ###
 
 //Add new subscriber
-POST http://localhost:3000/subscribers
+POST http://localhost:5000/subscribers
 Content-Type: application/json
 
 {
-    "name": "Amazing Person 12",
-    "subscriberDetails": "Subscribed since five years",
+    "name": "Test incvoice 1",
+    "subscriberDetails": "Contains invoice",
     "invoices":[{
         "invoiceId":324,
-        "companyName":"Resolver software technologies",
+        "companyName":"Resolver software ",
         "products":"Software package",
-        "totalPrice":10000
+        "totalPrice":1000120
+    }]
+}
+###
+//Update invoice
+PUT http://localhost:5000/subscribers
+Content-Type: application/json
+
+{
+    "name": "Test incvoice 1",
+    "subscriberDetails": "Contains invoice",
+    "invoices":[{
+        "invoiceId":324,
+        "companyName":"Resolver software ",
+        "products":"Software package",
+        "totalPrice":1000120
     }]
 }
 ###
 
 //Add new invoice
-POST http://localhost:3000/invoices
+POST http://localhost:5000/invoices
 Content-Type: application/json
 
 {
@@ -38,5 +53,5 @@ Content-Type: application/json
 ###
 
 //Delete subscriber
-DELETE http://localhost:3000/subscribers/632c387683d05631ad254672
+DELETE http://localhost:5000/subscribers/632c387683d05631ad254672
 
